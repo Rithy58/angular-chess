@@ -19,6 +19,16 @@
 </head>
 <body data-ng-controller="Controller">
   <h1>Hello, {{ name }}</h1>
+  <form data-ng-submit="addUser()">
+    Enter Your Name: <input type="text" data-ng-model="userName">
+    <input type="submit">
+  </form>
+
+
+  <h2>Users who have visited this site:</h2>
+  <ul>
+    <li data-ng-repeat="user in users">{{ user.name }}</li>
+  </ul>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -28,8 +38,13 @@
   <!-- AngularJS -->
   <script src="bower_components/angular/angular.min.js"></script>
 
-  <!-- custom scripts -->
-  <script src="scripts/script.js"></script>
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
+
+  <!-- app scripts -->
+  <script src="scripts/app.js"></script>
 
 </body>
 </html>
