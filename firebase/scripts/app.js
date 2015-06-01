@@ -7,8 +7,8 @@ var usersObj = $firebaseObject(ref);
 usersObj.$bindTo($scope, "userName");
 });*/
 
-app.controller("Controller", ["$scope", "$firebaseArray",
-function($scope, $firebaseArray) {
+app.controller("Controller", ["$scope", "$firebaseArray", "$firebaseAuth",
+function($scope, $firebaseArray, $firebaseAuth) {
 
   $scope.name = 'Guest';
 
@@ -18,12 +18,24 @@ function($scope, $firebaseArray) {
 
   $scope.users = $firebaseArray(ref);
 
+  var auth = $firebaseAuth(ref);
+
   $scope.addUser = function() {
     $scope.users.$add({
       name: $scope.userName,
       timestamp: Firebase.ServerValue.TIMESTAMP
     });
     $scope.name = $scope.userName;
-  }
+  };
+
+  $scope.facebookLogin = function() {
+    auth.$authWithOAuthPopup("facebook").then(function(authData) {
+      $scope.userName = authData.facebook.displayName;
+      $scope.addUser();
+      $scope.userName = "";
+    }).catch(function (error) {
+      console.error("Authentication failed:", error);
+    });
+  };
 }
 ]);
