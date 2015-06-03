@@ -17,3 +17,13 @@ This is my attempt to learn more about AngularJS and Firebase by actually workin
 6. (Bug-House-Chess?)
 7. (Rank? Leaderboard?)
 8. (Sign in/up with username and password?)
+
+### What I learned:
+* Javascript
+* AngularJS
+* Firebase
+* MVC Design Pattern
+* Singleton/Factory Design Pattern
+* Front-end
+* Facebook API
+* Refactoring/Restructuring Code
