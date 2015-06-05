@@ -17,20 +17,10 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body data-ng-controller="Controller">
-  <h1>Hello, {{ name }}</h1>
-  <form data-ng-submit="addUser()">
-    Enter Your Name: <input type="text" data-ng-model="userName">
-    <input type="submit">
-  </form>
+<body>
 
-
-  <h2>Users who have visited this site:</h2>
-  <ul>
-    <li data-ng-repeat="user in users">{{ user.name }}</li>
-  </ul>
-
-  <img src="/img/button_facebook_login.png" data-ng-click="facebookLogin()" />
+  <!-- view -->
+  <div data-ng-view></div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -46,7 +36,9 @@
   <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
 
   <!-- app scripts -->
-  <script src="scripts/app.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/controllers/homeController.js"></script>
+  <script src="app/controllers/loginController.js"></script>
 
 </body>
 </html>
