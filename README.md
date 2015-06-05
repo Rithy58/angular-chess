@@ -6,14 +6,14 @@ This is my attempt to learn more about AngularJS and Firebase by actually workin
 
 + Real-Time Data Sync via Firebase
 + Facebook Login
++ Chat
 + more coming soon...
 
 ## To Do List
 
-2. Security
-3. Chat
-4. Room
-5. Chess
-6. (Bug-House-Chess?)
-7. (Rank? Leaderboard?)
-8. (Sign in/up with username and password?)
+3. Security
+1. Room
+2. Chess
+9. (Bug-House-Chess?)
+9. (Rank? Leaderboard?)
+5. (Sign in/up with username and password?)
