@@ -7,8 +7,10 @@
  * A demo of using AngularFire to manage a synchronized list.
  */
 angular.module('angularChessApp')
-  .controller('ChatCtrl', function ($scope, Ref, $firebaseArray, $timeout) {
+  .controller('ChatCtrl', function ($scope, user, Ref, $firebaseArray, $timeout) {
     // synchronize a read-only, synchronized array of messages, limit to most recent 10
+    $scope.user = user;
+
     $scope.messages = $firebaseArray(Ref.child('messages').limitToLast(10));
 
     // display any errors
@@ -18,7 +20,7 @@ angular.module('angularChessApp')
     $scope.addMessage = function(newMessage) {
       if( newMessage ) {
         // push a message to the end of the array
-        $scope.messages.$add({text: newMessage})
+        $scope.messages.$add({text: newMessage, name: user.facebook.displayName})
           // display any errors
           .catch(alert);
       }
